@@ -32,5 +32,5 @@ class ExtraInfo(models.Model):
     )
 
     def __str__(self):
-        result = "{0.user} {0.nationality} {0.age} {0.phone_number}"
+        result = "{0.user} {0.job_title} {0.age} {0.phone_number}"
         return result.format(self)

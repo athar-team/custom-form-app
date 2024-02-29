@@ -20,7 +20,7 @@ class ExtraInfoAdmin(admin.ModelAdmin):
         writer = csv.writer(f)
         writer.writerow(["user", "age", "phone_number", "job_title"])
         for s in queryset:
-            writer.writerow([s.user, s.nationality, s.age, s.phone_number])
+            writer.writerow([s.user, s.age, s.phone_number, s.job_title])
 
         f.close()
         f = open("some.csv", "r")
