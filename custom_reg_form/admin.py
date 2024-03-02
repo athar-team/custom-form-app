@@ -1,16 +1,16 @@
 from django.contrib import admin
-from .models import ExtraInfo
+from .models import UserFields
 import csv
 from django.http import HttpResponse
 from io import StringIO
 
 
-class ExtraInfoAdmin(admin.ModelAdmin):
+class UserFieldsAdmin(admin.ModelAdmin):
     actions = ["download_csv"]
-    list_display = ("user", "age", "phone_number", "job_title")
-    list_display_links = ("user", "age", "phone_number", "job_title")
+    list_display = ("user", "age", "mobile_number", "job_title")
+    list_display_links = ("user", "age", "mobile_number", "job_title")
     list_filter = ("user",)
-    search_fields = ("user", "age", "phone_number", "job_title")
+    search_fields = ("user", "age", "mobile_number", "job_title")
     list_per_page = 25
 
     def download_csv(self, request, queryset, *args, **kwargs):
@@ -18,9 +18,9 @@ class ExtraInfoAdmin(admin.ModelAdmin):
 
         f = open("some.csv", "w")
         writer = csv.writer(f)
-        writer.writerow(["user", "age", "phone_number", "job_title"])
+        writer.writerow(["user", "age", "mobile_number", "job_title"])
         for s in queryset:
-            writer.writerow([s.user, s.age, s.phone_number, s.job_title])
+            writer.writerow([s.user, s.age, s.mobile_number, s.job_title])
 
         f.close()
         f = open("some.csv", "r")
@@ -31,4 +31,4 @@ class ExtraInfoAdmin(admin.ModelAdmin):
     download_csv.short_description = "Download CSV "
 
 
-admin.site.register(ExtraInfo, ExtraInfoAdmin)
+admin.site.register(UserFields, UserFieldsAdmin)

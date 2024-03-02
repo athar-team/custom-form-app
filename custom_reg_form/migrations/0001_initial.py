@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="ExtraInfo",
+            name="UserFields",
             fields=[
                 (
                     "id",
@@ -26,8 +26,8 @@ class Migration(migrations.Migration):
                 ),
                 ("age", models.CharField(verbose_name="Age", max_length=20)),
                 (
-                    "phone_number",
-                    models.CharField(verbose_name="Phone Number", max_length=100),
+                    "mobile_number",
+                    models.CharField(verbose_name="Mobile Number", max_length=100),
                 ),
                 (
                     "job_title",
