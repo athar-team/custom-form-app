@@ -9,10 +9,6 @@ class UserFieldsForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(UserFieldsForm, self).__init__(*args, **kwargs)
-        self.fields["age"].error_messages = {
-            "required": "Please tell us your favorite movie.",
-            "invalid": "We're pretty sure you made that movie up.",
-        }
         self.fields["mobile_number"].error_messages = {
             "required": "Please tell us your favorite movie.",
             "invalid": "We're pretty sure you made that movie up.",
@@ -24,4 +20,4 @@ class UserFieldsForm(ModelForm):
 
     class Meta(object):
         model = UserFields
-        fields = ("age", "mobile_number", "job_title")
+        fields = ("mobile_number", "job_title")

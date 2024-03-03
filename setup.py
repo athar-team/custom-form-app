@@ -28,7 +28,7 @@ from setuptools import setup
 
 setup(
     name='custom-form-app',
-    version='0.1.6',
+    version='0.1.7',
     description='LMS - Custom Registration Extension Form',
     packages=['custom_reg_form'],
     install_requires=[

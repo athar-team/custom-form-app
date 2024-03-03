@@ -24,7 +24,6 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("age", models.CharField(verbose_name="Age", max_length=20)),
                 (
                     "mobile_number",
                     models.CharField(verbose_name="Mobile Number", max_length=100),

@@ -20,6 +20,5 @@ class UserFields(models.Model):
     )
     name = models.CharField(blank=True, max_length=255, db_index=True)
 
-    age = models.IntegerField(verbose_name="Age")
     mobile_number = models.CharField(verbose_name="Mobile Number", max_length=100)
     job_title = models.CharField(verbose_name="Job Title", max_length=100)
